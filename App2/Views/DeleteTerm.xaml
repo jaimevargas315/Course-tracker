@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Views.DeleteTerm">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0">
+                <Frame BackgroundColor="Navy" Padding="0" CornerRadius="0">
+                    <Grid Padding="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Course View" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="28" Grid.Column="0"/>
+                        <Image Source="wgu" WidthRequest="200" Grid.Column="1" HorizontalOptions="End" />
+                    </Grid>
+                </Frame>
+                <Label Text="Select which term to delete:" Margin="30" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+                <Picker x:Name="Term_picker" Title="Term" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Large" WidthRequest="200"/>
+                <Button Text="Delete" BackgroundColor="Navy" TextColor="white" WidthRequest="200" HeightRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Margin="100" Clicked="Submit_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

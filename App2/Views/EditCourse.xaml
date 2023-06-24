@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.EditCourse">
+    <ScrollView BackgroundColor="LightGray" Padding="0" Margin="0">
+        <StackLayout Spacing="0" Margin="0" Padding="0">
+            <Frame BackgroundColor="Navy" Padding="0" CornerRadius="0">
+                <Grid Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Course View" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="28" Grid.Column="0"/>
+                    <Image Source="wgu" WidthRequest="200" Grid.Column="1" HorizontalOptions="End" />
+                </Grid>
+            </Frame>
+
+            <Frame BackgroundColor="LightBlue" Padding="5">
+                <Label x:Name="Class_name" Text="Mobile Application Development Using C#" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+            </Frame>
+            <Grid Padding="10" RowSpacing="0" ColumnSpacing="0" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Label FontSize="Large" Text="Start Date:" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <DatePicker x:Name="start_date" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Label FontSize="Large" Text="End Date:" HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"/>
+                    <DatePicker x:Name="end_date" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Label Text="Course Status:" FontSize="Large" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                    <Picker x:Name="course_status" Title="Course Status" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" FontSize="Small" >
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Active</x:String>
+                                <x:String>Not Active</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+                <Label Text="Notifications" Grid.Row="7" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Large" Grid.ColumnSpan="2"/>
+                <StackLayout Orientation="Horizontal" Grid.Row="8" Grid.Column="0" Padding="0" Spacing="0" Margin="0" Grid.ColumnSpan="2">
+                    <Label Text="Start of Course" FontSize="Medium" HorizontalOptions="EndAndExpand"/>
+                    <CheckBox x:Name="notify_start"  HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Row="9" Grid.Column="0" Padding="0" Spacing="0" Margin="0" Grid.ColumnSpan="2">
+                    <Label Text="End of Course  " FontSize="Medium" HorizontalOptions="EndAndExpand"/>
+                    <CheckBox x:Name="notify_end" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+                <Label  Text="Course Name:" FontSize="Large" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
+                <Entry x:Name="Class_name_2" Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand" WidthRequest="175"/> 
+                <Label  Text="Instructor Name:" FontSize="Large" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
+                <Entry x:Name="instructor_name" Grid.Column="1" Grid.Row="1" HorizontalOptions="CenterAndExpand" WidthRequest="175"/>
+                <Label  Text="Instructor E-mail:" FontSize="Large" Grid.Column="0" Grid.Row="2" HorizontalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
+                <Entry x:Name="email_" Grid.Column="1" Grid.Row="2" HorizontalOptions="CenterAndExpand" WidthRequest="175" Keyboard="Email"/>
+                <Label  Text="Instructor Phone #:" FontSize="Large" Grid.Column="0" Grid.Row="3" HorizontalTextAlignment="Center" HorizontalOptions="EndAndExpand"/>
+                <Entry x:Name="phone_" Grid.Column="1" Grid.Row="3" HorizontalOptions="CenterAndExpand" WidthRequest="175" Keyboard="Telephone"/>
+            </Grid>
+            <StackLayout>
+                <Label Text="Notes" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+                <Editor x:Name="notes_" WidthRequest="100" HeightRequest="150" BackgroundColor="LightBlue"/>
+            </StackLayout>
+            <Button Text="Submit" BackgroundColor="Navy" TextColor="white" WidthRequest="200" HeightRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Margin="10" Clicked="Submit_Clicked"/>
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

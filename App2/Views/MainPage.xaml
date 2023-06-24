@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             
+             x:Class="App2.MainPage"
+             BackgroundColor="LightGray">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add New Term"
+                     Order="Secondary"
+                     Priority="0"
+                     Clicked="Add_Clicked"/>
+        <ToolbarItem Text="Edit a Term"
+                     Order="Secondary"
+                     Priority="1" 
+                     Clicked="Edit_Clicked"/>
+        <ToolbarItem Text="Delete a Term"
+                     Order="Secondary"
+                     Priority="2"
+                     Clicked="Delete_Clicked"/>
+        <ToolbarItem Text="Add a Course"
+                     Order="Secondary"
+                     Priority="3"
+                     Clicked="Course_Add_Clicked"
+            />
+    </ContentPage.ToolbarItems>
+    <ScrollView>
+        <StackLayout Spacing="0" Padding="0" Margin="0">
+            <Frame BackgroundColor="Navy" Padding="0" CornerRadius="0">
+                <Grid Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Term View" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="28" Grid.Column="0"/>
+                    <Image Source="wgu" WidthRequest="200" Grid.Column="1" HorizontalOptions="End" />
+                </Grid>
+            </Frame>
+            <Frame Padding="0" Margin="0" >
+                <Grid x:Name="Course_Grid" Padding="0" Margin="0" HorizontalOptions="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height ="0"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="200" />
+                    <Label Text="" FontAttributes="Bold" Grid.Row="0" Grid.Column="1" HorizontalTextAlignment="End" HorizontalOptions="End" WidthRequest="200" />
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

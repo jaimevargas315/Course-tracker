@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.EditAssessment">
+
+    <ContentPage.Content>
+        <ScrollView Padding="0">
+            <StackLayout Spacing="0" Margin="0" Padding="0">
+                <Frame BackgroundColor="Navy" Padding="0" CornerRadius="0">
+                    <Grid Padding="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto" />
+                        </Grid.RowDefinitions>
+                        <Label Text="Assessment View" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="28" Grid.Column="0"/>
+                        <Image Source="wgu" WidthRequest="200" Grid.Column="1" HorizontalOptions="End" />
+                    </Grid>
+                </Frame>
+                <Frame BackgroundColor="LightBlue" Padding="5">
+                    <Label x:Name="Class_name" Text="Mobile Application Development Using C#" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                </Frame>
+                <Grid Padding="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Assessment Code:" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Grid.Row="0"/>
+                    <Entry x:Name="Assessment_code" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" Grid.Row="0"/>
+                    <Label Text="Assessment Type:" FontSize="Large" Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Picker x:Name="Assessment_type" Title="Assessment Type" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Small" Grid.Column="1" Grid.Row="1">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Objective</x:String>
+                                <x:String>Performance</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                    <Label Text="Start Date:" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Grid.Row="2"/>
+                    <DatePicker x:Name="Start_Date" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" Grid.Row="2"/>
+                    <Label Text="End Date:" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Grid.Row="3"/>
+                    <DatePicker x:Name="End_Date" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="1" Grid.Row="3"/>
+                    <Label Text="Notifications" Grid.Row="4" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Large" Grid.ColumnSpan="2"/>
+                    <StackLayout Orientation="Horizontal" Grid.Row="5" Grid.Column="0" Padding="0" Spacing="0" Margin="0" Grid.ColumnSpan="2" HorizontalOptions="Center">
+                        <Label Text="Start of Assessment" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                        <CheckBox x:Name="Notify_start" HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Grid.Row="6" Grid.Column="0" Padding="0" Spacing="0" Margin="0" Grid.ColumnSpan="2" HorizontalOptions="Center">
+                        <Label Text="End of Assessment  " FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                        <CheckBox x:Name="Notify_end" HorizontalOptions="Center"/>
+                    </StackLayout>
+                </Grid>
+                <Label TextColor="White" BackgroundColor="Navy" Text="Assessment Summary" FontSize="Large" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Padding="5" WidthRequest="500"/>
+                <Editor x:Name ="Summary_" BackgroundColor="LightBlue" FontSize="Small" WidthRequest="200" HeightRequest="200" Text=" The quick brown fox jumps over the lazy brown dog. Sphynx of quartz, hear my vow. The quick brown fox jumps over the lazy brown dog. Sphynx of quartz, hear my vow.The quick brown fox jumps over the lazy brown dog. Sphynx of quartz, hear my vow. The quick brown fox jumps over the lazy brown dog. Sphynx of quartz, hear my vow.The quick brown fox jumps over the lazy brown dog. Sphynx of quartz, hear my vow."/>
+                <Label TextColor="White" BackgroundColor="Navy" Text="Key Objectives" FontSize="Large" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Padding="5" WidthRequest="500"/>
+                <Editor x:Name="Objectives_" BackgroundColor="LightBlue" FontSize="Small" WidthRequest="200" HeightRequest="200" Text=" The quick brown fox jumps over the lazy brown dog. Sphynx of quartz, hear my vow. The quick brown fox jumps over the lazy brown dog. Sphynx of quartz, hear my vow.The quick brown fox jumps over the lazy brown dog. Sphynx of quartz, hear my vow. The quick brown fox jumps over the lazy brown dog. Sphynx of quartz, hear my vow.The quick brown fox jumps over the lazy brown dog. Sphynx of quartz, hear my vow."/>
+                <Button Text="Submit" BackgroundColor="Navy" TextColor="white" WidthRequest="200" HeightRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Margin="10" Clicked="Submit_Clicked"/>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Page1">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit Course info"
+                     Order="Secondary"
+                     Priority="0"
+                     Clicked="EditCourseButton_Clicked"/>
+        <ToolbarItem Text="Add Assessment"
+                     Order="Secondary"
+                     Priority="1" 
+                     Clicked="AddAssessmentButton_Clicked"/> 
+        <ToolbarItem Text="Delete Course"
+                     Order="Secondary"
+                     Priority="1" 
+                     Clicked="DeleteButton_Clicked"/>
+    </ContentPage.ToolbarItems>
+    <ScrollView BackgroundColor="LightGray" Padding="0" Margin="0">
+        <StackLayout Spacing="0" Margin="0" Padding="0">
+            <Frame BackgroundColor="Navy" Padding="0" CornerRadius="0">
+                <Grid Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Course View" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="28" Grid.Column="0"/>
+                    <Image Source="wgu" WidthRequest="200" Grid.Column="1" HorizontalOptions="End" />
+                </Grid>
+            </Frame>
+
+            <Frame BackgroundColor="LightBlue" Padding="5">
+                <Label x:Name="Course_Name" Text="Mobile Application Development Using C#" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+            </Frame>
+            <Grid Padding="10" RowSpacing="0" ColumnSpacing="0" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                    <Label Text="Start Date:" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                    <DatePicker x:Name="Start_date" IsEnabled="False"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                    <Label Text="End Date:" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                    <DatePicker x:Name="End_date" IsEnabled="False"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Row="2" Grid.Column="0">
+                    <Label Text="Course Status:" HorizontalOptions="End" VerticalOptions="Center"/>
+                    <Picker x:Name="Course_status" IsEnabled="False" Title="Course Status" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Small">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Active</x:String>
+                                <x:String>Not Active</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </StackLayout>
+                <Label Text="Notifications" Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Large"/>
+                <StackLayout Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Padding="0" Spacing="0" Margin="0">
+                    <Label Text="Start of Course" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                    <CheckBox x:Name="Notify_start" IsEnabled="False" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Row="5" Grid.Column="0" Padding="0" Spacing="0" Margin="0">
+                    <Label Text="End of Course" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                    <CheckBox x:Name="Notify_end" IsEnabled="False" HorizontalOptions="Center"/>
+                </StackLayout>
+                
+                <Label Text="Course Instructor" FontSize="Large" Grid.Column="1" Grid.Row="0" HorizontalTextAlignment="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+                <Label x:Name="Instructor_name" Text="Instructor Name" FontSize="Medium" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center" HorizontalOptions="Center"/>
+                <Image Source="profile" Grid.Column="1" Grid.Row="2" WidthRequest="125" Grid.RowSpan="4"/>
+                <Frame Grid.Column ="1" Grid.Row="6" BackgroundColor="LightBlue" HasShadow="True">
+                    <StackLayout>
+                        <Label Text="Contact Information" HorizontalOptions="Center" FontAttributes="Bold"/>
+                        <Label x:Name="Phone_" Text="Phone: 123-456-789"/>
+                        <Label x:Name="Email_" Text="E-mail: instructor@wgu.edu"/>
+                    </StackLayout>
+                </Frame>
+                <Frame Grid.Column="0" Grid.Row="6" Padding="5">
+                    <Grid RowSpacing="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Text="Notes" FontSize="Small" Grid.Column="0" Grid.Row="0" />
+                        <StackLayout Orientation="Horizontal" Grid.Column="1" Grid.Row="0" HorizontalOptions="EndAndExpand" Spacing="0">
+                        <Button WidthRequest="10" HeightRequest="10" Padding="0" HorizontalOptions="Center" Text="+" FontSize="Small"/>
+                        <Button WidthRequest="10" HeightRequest="10" Padding="0" HorizontalOptions="Center" Text="-" FontSize="Small"/>
+                        <Button x:Name="Share_button" Pressed="Share_pressed" WidthRequest="50" HeightRequest="10" Padding="0" HorizontalOptions="Center" Text="Share" FontSize="Small"/>
+                        </StackLayout>
+                        <Label x:Name="Notes_" Text="" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="3"/>
+                    </Grid>
+                </Frame>
+
+            </Grid>
+            <Frame BackgroundColor="LightBlue" Padding="0" Margin="0">
+                <Label Text="Course Assessments" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold"/>
+            </Frame>
+            <Grid RowSpacing="2" ColumnSpacing="30" Padding="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Objective Assessment" FontSize="Medium" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontAttributes="Bold"/>
+                <Label x:Name="Code1" Text="No assessment" FontSize="Medium" Grid.Row="1" Grid.Column="0"/>
+                <Button x:Name="Objective_Button" Text="Go to Assessment" Margin="5" Padding="0" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" HorizontalOptions="End"
+                        WidthRequest="150" HeightRequest="25" BackgroundColor="Navy" CornerRadius="5" TextColor="White" Clicked="ObjectiveButton_Clicked" IsEnabled="False"/> 
+
+                <Label x:Name="Summary1" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Summary goes here"/>
+                <Frame BackgroundColor="Black" Grid.Row="4" Grid.ColumnSpan="2" HeightRequest="3" WidthRequest="500"
+                       HorizontalOptions="Center" VerticalOptions="Center" Padding="0" Margin="0"/>
+            </Grid>
+
+            <Grid RowSpacing="2" ColumnSpacing="30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Performance Assessment" FontSize="Medium" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontAttributes="Bold"/>
+                <Label x:Name="Code2" Text="No assessment" FontSize="Medium" Grid.Row="1" Grid.Column="0"/>
+                <Button x:Name="Performance_Button" Text="Go to Assessment" Margin="5" Padding="0" Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" HorizontalOptions="End"
+                        WidthRequest="150" HeightRequest="25" BackgroundColor="Navy" CornerRadius="5" TextColor="White" Clicked="PerformanceButton_Clicked" IsEnabled="False"/>
+
+                <Label x:Name="Summary2" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Summary goes here"/>
+                
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

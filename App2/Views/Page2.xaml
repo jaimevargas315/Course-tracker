@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             
+             x:Class="App2.Page2"
+             BackgroundColor="LightGray"
+             >
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Edit Assessment"
+                     Order="Secondary"
+                     Priority="1" 
+                     Clicked="EditAssessment_Clicked"/>
+        <ToolbarItem Text="Delete Assessment"
+                     Order="Secondary"
+                     Priority="2"
+                     Clicked="DeleteAssessment_Clicked"
+            />
+    </ContentPage.ToolbarItems>
+    <ScrollView Padding="0">
+        <StackLayout Spacing="0" Margin="0" Padding="0">
+            <Frame BackgroundColor="Navy" Padding="0" CornerRadius="0">
+                <Grid Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Assessment View" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="28" Grid.Column="0"/>
+                    <Image Source="wgu" WidthRequest="200" Grid.Column="1" HorizontalOptions="End" />
+                </Grid>
+            </Frame>
+            <Frame BackgroundColor="LightBlue" Padding="5">
+                <Label x:Name="Class_name" Text="Mobile Application Development Using C#" FontSize="Medium" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+            </Frame>
+            <Label x:Name="Assessment_type" Text="Objective Assessment" FontSize="Large" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+            <Label x:Name="Assessment_code" Text="OBJ-LAP1" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.Column="0">
+                    <Label Text="Start Date:" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                    <DatePicker x:Name="Start_date" IsEnabled="False" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Row="1" Grid.Column="0">
+                    <Label Text="End Date:" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+                    <DatePicker x:Name="End_date" IsEnabled="False"/>
+                </StackLayout>
+                <Label Text="Notifications" Grid.Row="3" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" FontSize="Large"/>
+                <StackLayout Orientation="Horizontal" Grid.Row="4" Grid.Column="0" Padding="0" Spacing="0" Margin="0">
+                    <Label Text="Start of Assessment" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                    <CheckBox x:Name="Notify_start" IsEnabled="False" HorizontalOptions="Center"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Grid.Row="5" Grid.Column="0" Padding="0" Spacing="0" Margin="0">
+                    <Label Text="End of Assessment" FontSize="Medium" HorizontalOptions="CenterAndExpand"/>
+                    <CheckBox x:Name="Notify_end" IsEnabled="False" HorizontalOptions="Center"/>
+                </StackLayout>
+                <Label Text="Summary" FontSize="Medium" Grid.Column="1" Grid.Row="0" HorizontalOptions="CenterAndExpand"/>
+                <Label x:Name="Summary_" Text="Ac tortor dignissim convallis aenean et tortor at. Ultricies mi eget mauris pharetra et. faucibus interdum posuere lorem ipsum dolor.  Eget aliquet nibh praesent tristique magna sit amet. Eget aliquet nibh praesent tristique magna sit amet. Eget aliquet nibh praesent tristique magna sit amet. Eget aliquet nibh praesent tristique magna sit amet. "
+                        FontSize="Small" HorizontalOptions="Center" Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" Margin="0" />
+            </Grid>
+            <Label Text="Key Objectives" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+            <Label x:Name="Objectives_" Text="
+                   - Filler text Filler text Filler text Filler text Filler text  &#10;&#10;
+                   - Filler text Filler text Filler text Filler text Filler text  &#10;&#10;
+                   - Filler text Filler text Filler text Filler text Filler text  &#10;&#10;
+                   - Filler text Filler text Filler text Filler text Filler text  &#10;&#10;
+                   - Filler text Filler text Filler text Filler text Filler text  &#10;&#10;
+                   - Filler text Filler text Filler text Filler text Filler text  &#10;&#10;
+                   - Filler text Filler text Filler text Filler text Filler text  &#10;&#10;
+                   "
+                   HorizontalOptions="Start" HorizontalTextAlignment="Start" Margin="10" Padding="0" TranslationX="-60"/>
+            <Button Text="Begin Assessment" BackgroundColor="Navy" TextColor="white" WidthRequest="200" HeightRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Margin="10"/>
+        </StackLayout>
+    </ScrollView>
+ </ContentPage>

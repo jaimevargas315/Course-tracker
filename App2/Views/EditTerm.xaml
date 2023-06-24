@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.EditTerm">
+
+    <ScrollView>
+        <StackLayout Spacing="0">
+            <Frame BackgroundColor="Navy" Padding="0" CornerRadius="0">
+                <Grid Padding="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Label Text="Course View" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="White" FontSize="28" Grid.Column="0"/>
+                    <Image Source="wgu" WidthRequest="200" Grid.Column="1" HorizontalOptions="End" />
+                </Grid>
+            </Frame>
+            <Frame BackgroundColor="LightBlue">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry x:Name="Term_title" WidthRequest="150" Placeholder="Term title" FontSize="Title" Grid.Column="0" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <DatePicker x:Name="Start_date" Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Text="-" Grid.Column="2" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    <DatePicker x:Name="End_date" Grid.Column="3" HorizontalOptions="Center" VerticalOptions="Center"/>
+                </Grid>
+            </Frame>
+            <Label Text="Select which term to edit:" Margin=" 10" HorizontalOptions="CenterAndExpand" FontSize="Large"/>
+            <Picker x:Name="Term_picker" Title="Term" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontSize="Large" WidthRequest="200" SelectedIndexChanged="Term_picker_SelectedIndexChanged"/>
+            <Button Text="Update" BackgroundColor="Navy" TextColor="white" WidthRequest="200" HeightRequest="50" HorizontalOptions="Center" VerticalOptions="Center" Margin="100" Clicked="Submit_Clicked" />
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
